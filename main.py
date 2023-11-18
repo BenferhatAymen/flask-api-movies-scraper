@@ -14,10 +14,8 @@ class MovieSearch(Resource):
 
 class ShowLinks(Resource):
     def get(self):
-        # Extract movie link from headers
         movieLink = request.headers.get("link")
 
-        # Perform your logic with the movieLink (e.g., getWatchLinks(movieLink))
         a = getWatchLinks(movieLink)
         return jsonify({"data": a})
 
